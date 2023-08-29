@@ -51,7 +51,7 @@ function App() {
         rows={rows}
         addRow={addRow}
       />
-      {JSON.stringify(rows)}
+
       <Table
         rows={rows}
         deleteColumn={deleteColumn}

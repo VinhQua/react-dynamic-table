@@ -17,13 +17,13 @@ const Table = ({
         <table className="table">
           <thead className="bg-dark text-white">
             {columns.length > 1 && (
-              <tr>
+              <tr className="bg-white">
                 <th></th>
                 {columns.map((col, index) => (
                   <th key={index * 23423}>
                     <button
                       type="button"
-                      className="btn btn-block btn-sm form-control text-center"
+                      className="btn btn-block btn-sm btn-outline-danger form-control text-center"
                       onClick={() => deleteColumn(index)}
                     >
                       delete
@@ -53,10 +53,10 @@ const Table = ({
               <th scope="col" className="text-center">
                 <button
                   type="button"
-                  className="btn btn-outline-light btn-sm"
+                  className="btn btn-block btn-outline-light btn-sm"
                   onClick={addColumns}
                 >
-                  add Column
+                  Add +
                 </button>
               </th>
             </tr>
@@ -66,7 +66,7 @@ const Table = ({
               <tr>
                 <th
                   scope="col"
-                  colSpan={columns.length + 1}
+                  colSpan={columns.length + 2}
                   className="text-center py-3"
                 >
                   Please click Add Row button to add a row
@@ -75,7 +75,8 @@ const Table = ({
             ) : (
               rows.map((row, rowIndex) => (
                 <tr key={rowIndex}>
-                  <th></th>
+                  <td className="text-center">{rowIndex + 1}</td>
+
                   {row.map((colValue, colIndex) => (
                     <td key={colIndex}>
                       <input
@@ -89,15 +90,15 @@ const Table = ({
                       />
                     </td>
                   ))}
-                  <th>
+                  <td>
                     <button
                       type="button"
-                      className="btn btn-sm form-control text-center"
+                      className="btn btn-block btn-sm form-control text-center btn-outline-danger"
                       onClick={() => deleteRow(rowIndex)}
                     >
                       delete
                     </button>
-                  </th>
+                  </td>
                 </tr>
               ))
             )}
