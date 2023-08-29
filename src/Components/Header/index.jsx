@@ -27,7 +27,7 @@ const Header = ({ addColumns, columns, rows, addRow }) => {
           >
             Add Row
           </button>
-          <SaveToJson />
+          <SaveToJson columns={columns} rows={rows} />
           <SaveToExcel />
         </div>
       </div>

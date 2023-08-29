@@ -10,7 +10,6 @@ const Table = ({
   deleteRow,
   handleRowChange,
 }) => {
-  console.log(columns);
   return (
     <div className="row mb-5">
       <div className="col-md-10 mx-auto mt-5 ">
@@ -81,8 +80,9 @@ const Table = ({
                     <td key={colIndex}>
                       <input
                         type="text"
-                        className="form-control text-center text-black border-transparent border-0"
+                        className="form-control outline text-center text-black border-transparent border-1"
                         value={colValue}
+                        placeholder="Enter your value"
                         style={{ boxShadow: "none" }}
                         onChange={(e) =>
                           handleRowChange(e.target.value, rowIndex, colIndex)
