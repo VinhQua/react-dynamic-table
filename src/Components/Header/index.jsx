@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import SaveToJson from "./Components/SaveToJson";
 import SaveToExcel from "./Components/SaveToExcel";
+import ImportFromExcel from "./Components/ImportFromExcel";
 
 const Header = ({ addColumns, columns, rows, addRow }) => {
   return (
@@ -28,7 +29,8 @@ const Header = ({ addColumns, columns, rows, addRow }) => {
             Add Row
           </button>
           <SaveToJson columns={columns} rows={rows} />
-          <SaveToExcel />
+          <SaveToExcel rows={rows} columns={columns} />
+          <ImportFromExcel />
         </div>
       </div>
     </div>
