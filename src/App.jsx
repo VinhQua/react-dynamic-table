@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Header, Table } from "./Components";
-
+import "react-toastify/dist/ReactToastify.css";
+import { Slide, ToastContainer, toast } from "react-toastify";
 function App() {
   const [columns, setColumns] = useState(["column 1"]);
   const [rows, setRows] = useState([]);
   const addColumns = () => {
     if (columns.length > 7) {
-      return alert("Maximum is 8 columns");
+      return toast.error("Maximum is 8 columns");
     }
     setColumns((prevColumns) => [
       ...prevColumns,
@@ -45,6 +46,12 @@ function App() {
 
   return (
     <div className="container-fluid">
+      <ToastContainer
+        position="top-center"
+        hideProgressBar
+        autoClose={2000}
+        transition={Slide}
+      />
       <Header
         columns={columns}
         addColumns={addColumns}

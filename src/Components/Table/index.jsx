@@ -13,8 +13,8 @@ const Table = ({
   return (
     <div className="row mb-5">
       <div className="col-md-10 mx-auto mt-5 ">
-        <table className="table">
-          <thead className="bg-dark text-white">
+        <table className="table table-responsive">
+          <thead>
             {columns.length > 1 && (
               <tr className="bg-white">
                 <th></th>
@@ -33,23 +33,28 @@ const Table = ({
               </tr>
             )}
 
-            <tr>
-              <th scope="col" className="text-center">
+            <tr className="bg-dark text-white">
+              <th scope="col" className="text-center bg-dark text-white">
                 Sno.
               </th>
               {columns.map((col, index) => (
-                <th key={index} scope="col" className="text-center">
+                <th
+                  key={index}
+                  scope="col"
+                  className="text-center bg-dark text-white"
+                >
                   <input
                     type="text"
-                    className="form-control text-center text-black border-transparent border-0"
+                    className="form-control text-center text-white border-transparent border-0 bg-transparent"
                     value={col}
                     style={{ boxShadow: "none" }}
                     onChange={(e) => handleColumnChange(e.target.value, index)}
+                    res
                   />
                 </th>
               ))}
 
-              <th scope="col" className="text-center">
+              <th scope="col" className="text-center bg-dark text-white">
                 <button
                   type="button"
                   className="btn btn-block btn-outline-light btn-sm"
