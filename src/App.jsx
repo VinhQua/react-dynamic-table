@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header, Table } from "./Components";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer, toast } from "react-toastify";
+import { styled } from "styled-components";
 function App() {
   const [columns, setColumns] = useState(["column 1"]);
   const [rows, setRows] = useState([]);
@@ -45,7 +46,7 @@ function App() {
   };
 
   return (
-    <div className="container-fluid">
+    <Wrapper>
       <ToastContainer
         position="top-center"
         hideProgressBar
@@ -69,8 +70,15 @@ function App() {
         handleRowChange={handleRowChange}
         deleteRow={deleteRow}
       />
-    </div>
+    </Wrapper>
   );
 }
 
 export default App;
+const Wrapper = styled.div`
+  width: 100%;
+  padding-right: calc(1.5rem * 0.5);
+  padding-left: calc(1.5rem * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+`;

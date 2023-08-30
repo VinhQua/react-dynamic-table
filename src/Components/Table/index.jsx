@@ -57,7 +57,7 @@ const Table = ({
               <th scope="col" className="text-center bg-dark text-white">
                 <button
                   type="button"
-                  className="btn btn-block btn-outline-light btn-sm"
+                  className="btn btn-outline-light btn-sm"
                   onClick={addColumns}
                 >
                   Add +

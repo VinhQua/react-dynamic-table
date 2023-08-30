@@ -38,3 +38,9 @@ const Header = ({ addColumns, columns, rows, addRow }) => {
 };
 
 export default Header;
+
+const Wrapper = styled.div`
+  display:flex;
+  flex-wrap:wrap;
+  margin-top
+`;
